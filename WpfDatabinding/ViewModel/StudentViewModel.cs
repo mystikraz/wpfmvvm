@@ -10,10 +10,36 @@ namespace WpfDatabinding.ViewModel
 {
     public class StudentViewModel
     {
+        public MyICommand DeleteCommand { get; set; }
         public ObservableCollection<Student> Students { get; set; }
         public StudentViewModel()
         {
             LoadStudents();
+            DeleteCommand = new MyICommand(OnDelete, CanDelete);
+        }
+        private void OnDelete()
+        {
+            Students.Remove(SelectedStudent);
+        }
+
+        private bool CanDelete()
+        {
+            return SelectedStudent != null;
+        }
+        private Student _selectedStudent;
+
+        public Student SelectedStudent
+        {
+            get
+            {
+                return _selectedStudent;
+            }
+
+            set
+            {
+                _selectedStudent = value;
+                DeleteCommand.RaiseCanExecuteChanged();
+            }
         }
         public void LoadStudents()
         {
