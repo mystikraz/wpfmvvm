@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfDatabinding.ViewModel;
 
 namespace WpfDatabinding
 {
@@ -20,9 +21,51 @@ namespace WpfDatabinding
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Person person = new Person { Name = "Salman", Age = 26 };
+
         public MainWindow()
         {
             InitializeComponent();
+            //this.DataContext = person;
         }
+
+        private void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            StudentViewModel studentViewModel = new StudentViewModel();
+            studentViewModel.LoadStudents();
+
+            StudentViewControl.DataContext = studentViewModel;
+        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string message = person.Name + " is " + person.Age;
+        //    MessageBox.Show(message);
+        //}
     }
+    //public class Person
+    //{
+    //    private string nameValue;
+
+    //    public string Name
+    //    {
+    //        get { return nameValue; }
+    //        set { nameValue = value; }
+    //    }
+
+    //    private double ageValue;
+
+    //    public double Age
+    //    {
+    //        get { return ageValue; }
+    //        set
+    //        {
+    //            if (value != ageValue)
+    //            {
+    //                ageValue = value;
+    //            }
+    //        }
+    //    }
+
+
+    //}
 }
