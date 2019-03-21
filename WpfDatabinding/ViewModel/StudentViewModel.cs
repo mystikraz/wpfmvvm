@@ -11,6 +11,10 @@ namespace WpfDatabinding.ViewModel
     public class StudentViewModel
     {
         public ObservableCollection<Student> Students { get; set; }
+        public StudentViewModel()
+        {
+            LoadStudents();
+        }
         public void LoadStudents()
         {
             ObservableCollection<Student> students = new ObservableCollection<Student>();

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfDatabinding.ViewModel;
 
 namespace WpfDatabinding.Views
 {
@@ -23,6 +24,7 @@ namespace WpfDatabinding.Views
         public StudentView()
         {
             InitializeComponent();
+            this.DataContext = new StudentViewModel();
         }
     }
 }

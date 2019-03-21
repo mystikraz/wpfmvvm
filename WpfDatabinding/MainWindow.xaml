@@ -31,7 +31,8 @@
             <Button Content = "_Show..." Click="Button_Click" />
         </StackPanel>-->
 
-        <views:StudentView x:Name = "StudentViewControl" Loaded = "StudentViewControl_Loaded"/>
+        <!--<views:StudentView x:Name = "StudentViewControl" Loaded = "StudentViewControl_Loaded"/>-->
+        <views:StudentView x:Name = "StudentViewControl"/>
 
     </Grid>
 </Window>
