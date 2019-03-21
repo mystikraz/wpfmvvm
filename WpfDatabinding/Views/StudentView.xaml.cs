@@ -24,7 +24,7 @@ namespace WpfDatabinding.Views
         public StudentView()
         {
             InitializeComponent();
-            this.DataContext = new StudentViewModel();
+            //this.DataContext = new StudentViewModel();
         }
     }
 }
